@@ -1,0 +1,207 @@
+\documentclass{article}
+% Global layout
+\usepackage{fancyhdr, graphicx, hyperref, indentfirst, lastpage, setspace}
+
+% Encoding
+\usepackage[utf8]{vntex, inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, gensymb, textcomp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{vietnam}
+\usepackage{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphics}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{mdframed}
+\usepackage{fontawesome}
+\usepackage{listings}
+\usepackage{color}
+
+\usepackage{setspace}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{calc,angles}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+% Global layout
+\usepackage%
+[
+        a4paper,
+        % left=2cm,
+        % right=2cm,
+        % top=2cm,
+        % bottom=2cm,
+        % vmargin=2cm % vertical margins
+        % hmargin=3cm % horizontal margins
+        margin=3cm
+]
+{geometry}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\setcounter{tocdepth}{2}
+% Encoding
+\usepackage[utf8]{vntex, inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, amssymb, gensymb, textcomp}
+%%%%%%%%%%%% Bibliography %%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[backend=biber,style=alphabetic,sorting=ynt]{biblatex}
+\usepackage{csquotes}
+
+% Better table
+\usepackage{array, booktabs, multicol, multirow, siunitx, tabularx}
+% Wide tables go here https://tex.stackexchange.com/questions/332902/my-table-doesnt-fit-what-are-my-options
+\usepackage{tcolorbox}
+% Better enumerate
+\usepackage{enumitem}
+
+%%%%%%%%%%%% Code space %%%%%%%%%%%%
+\usepackage[dvipsnames]{xcolor}
+%\usepackage{tikz}
+
+% Graphics
+\usepackage{caption, float}
+
+\usepackage{hyperref}
+
+% Bibliography
+\addbibresource{ref.bib} % references file
+\nocite{*} % include all entries in references section
+
+% Page setup
+\allowdisplaybreaks{} % to have page breaks inside align* environment
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=red,colorlinks=true}
+\numberwithin{equation}{section}
+\renewcommand{\arraystretch}{1.2} % space between table rows
+
+% Global style setup
+\makeatletter % change font size for not having underfull hbox
+\renewcommand\Huge{\@setfontsize\Huge{22pt}{18}}
+\makeatother
+
+\AtBeginDocument{\renewcommand*\contentsname{Contents}}
+\AtBeginDocument{\renewcommand*\refname{References}}
+\setlength{\headheight}{40pt}
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\fancyhead[L]{
+  \begin{tabular}{rl}
+    \begin{picture}(25,15)(0,0)
+    \put(0,-8){\includegraphics[width=8mm, height=8mm]{hcmut.png}}
+    \end{picture}
+    \begin{tabular}{l}
+      \textbf{\bf \ttfamily University of Technology, Ho Chi Minh City}\\
+      \textbf{\bf \ttfamily Faculty of Computer Science and Engineering}
+    \end{tabular}
+  \end{tabular}
+}
+\fancyhead[R]{
+	\begin{tabular}{l}
+		\tiny \bf \\
+		\tiny \bf
+	\end{tabular}  }
+\fancyfoot{} % clear all footer fields
+\fancyfoot[R]{\scriptsize \ttfamily Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+\newenvironment{code}[1]
+{\VerbatimEnvironment%
+  \begin{mdframed}[leftline=false,rightline=false,backgroundcolor=magenta!10,nobreak=false]%
+    \begin{minted}[linenos=true,breaklines,breaksymbolleft=,obeytabs=true,tabsize=2]{#1}%
+}
+{
+    \end{minted}%
+  \end{mdframed}%
+} % TODO Sample codeblock
+
+\begin{document}
+
+\begin{titlepage}
+  \begin{center}
+    VIETNAM NATIONAL UNIVERSITY, HO CHI MINH CITY \\
+    UNIVERSITY OF TECHNOLOGY \\
+    FACULTY OF COMPUTER SCIENCE AND ENGINEERING
+  \end{center}
+
+  \vspace{1cm}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{hcmut.png}
+  \end{figure}
+
+  \vspace{1cm}
+
+  \begin{center}
+    \begin{tabular}{c}
+      \textbf{\Large LẬP TRÌNH NÂNG CAO (CN-HK222)} \\
+      {}                                             \\
+      \midrule                                       \\
+      \textbf{\Large Assignment (Semester 222)}          \\
+      {}                                             \\
+      \textbf{\Huge DESIGN PATTERN}         \\
+      {}                                             \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+
+  \vspace{1cm}
+
+  \begin{table}[h]
+    \begin{tabular}{rll}
+      \hspace{3cm} GVHD: & Mr.\ Trương Tuấn Anh &         \\
+                            &                                  \\
+      Students:             & Lê Nguyễn Phước Lộc & 2153544 \\
+                            
+
+    \end{tabular}
+  \end{table}
+
+  \begin{center}
+    {\footnotesize HO CHI MINH CITY, MAY 2023} \\
+  \end{center}
+\end{titlepage}
+
+%\thispagestyle{empty}
+
+\tableofcontents
+
+\newpage
+\include{main/intro}
+\newpage
+\include{main/creational}
+\newpage
+\include{main/structural}
+\newpage
+\include{main/behavioral}
+\newpage
+\include{main/end}
+\newpage
+\include{main/ref}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
